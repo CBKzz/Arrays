@@ -1,0 +1,22 @@
+Given an array and a target number, find the number of consecutive arrays that can be diveded by a target number k.
+I made two mistakes when dealing with this problem.
+1)We allow duplicate here. 1,2,3.....1,2,3... both 1,2,3 should be counted here
+2)consecutive...I thought it has to be 1,2,3, and 1,2,4 is not allowed. No, just consecutive.
+
+A natural thought would to count every subset, that would be o(n2). A tricky way would be use Mod. Use a hashmap to record
+
+public int helper(int k, int[] a){
+  Map<Integer,Integer>=new HashMap<>();
+  int sum=0;
+  for(int i=0;i<a.length;i++){
+    sum+=a[i];
+    int r=sum%k;
+    if(map.containsKey(r)) {
+      int temp=map.get(r);
+      map.put(r,temp+1);
+    }
+    else map.put(r,1);
+  }
+  
+  
+}

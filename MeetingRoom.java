@@ -52,6 +52,15 @@ Given an array of meeting time intervals consisting of start and end times [[s1,
         }
         return true;
     }
-
+/*
+each room has a value, we try to arrange these meetings in one room while max the sum of this value
+*/
+Considering using dynamic programming
+use an array to record max for 0,1,..i-1
+use an array to record end point for 0,1,..i-1
+Assume we have picked the max for 0,1,..i-1 meetings, with the end point 'e'. When we came to ith meeting, we have to choice:
+1. do nothing. use i-1: w(i)=w(i-1)
+2. add i to the meeting, then we have to find the max j with end[j]<=s[i], use binary search in end array; w(i)=v(i)+w(j);
+pick the bigger one
 }
 

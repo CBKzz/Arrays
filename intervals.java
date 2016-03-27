@@ -128,6 +128,9 @@ public List<Interval> merge(List<Interval> intervals) {
                     end=Math.max(end,map.get(i));
                 }
         }
+        /*
+        image if we can sort the interval[] array, then we can set up a new array F[], use F to denote whether we have chosen the interval
+        */
         return result; 
     }
 }
